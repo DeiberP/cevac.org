@@ -1,0 +1,102 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: url('../img/body.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #222;
+}
+
+.overlay {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    background: rgba(40, 40, 40, 0.75);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px 40px;
+    color: #f0f0f0;
+}
+
+h3 {
+    color: #ffffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+}
+
+label,
+.alert {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.btn-primary-custom {
+    background-color: #ff0000;
+    border-color: #cc0000;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn-primary-custom:hover,
+.btn-primary-custom:focus {
+    background-color: #cc0000;
+    border-color: #990000;
+    color: white;
+}
+
+.enlace-azul {
+    color: #0000ff;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.enlace-azul:hover {
+    color: #0000cc;
+    text-decoration: underline;
+}
+
+.logo-cevac {
+    max-width: 150px;
+    height: auto;
+    border: 2px solid #a0c4ff;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(160, 196, 255, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: inline-block;
+}
+
+.logo-cevac:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(160, 196, 255, 0.7);
+    border-color: #0000ff;
+}
+
+/* Cambiar fondo de alert-danger a rojo */
+.alert-danger {
+    --bs-alert-bg: #ff0000; /* rojo */
+    background-color: var(--bs-alert-bg) !important;
+    color: white;
+}
+
+/* Estilo para el contador */
+#countdown {
+    font-weight: bold;
+    color: white;
+    margin-top: 1rem;
+    text-align: center;
+}

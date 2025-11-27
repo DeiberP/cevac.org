@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+/* --- ESTILOS DEL CONTENIDO PRINCIPAL --- */
+.container {
+    max-width: 1200px;
+    height: auto;
+    margin: 20px auto;
+    padding: 0 30px;
+}
+
+/* Estilos para las secciones */
+.seccion,
+.section {
+    background-color: #ffffff;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seccion:hover,
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Estilos de los títulos */
+h2 {
+    color: #1900ff;
+    margin-bottom: 20px;
+    font-size: 2.2em;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 3px solid #272727;
+    padding-bottom: 12px;
+}
+
+h3 {
+    color: #1900ff;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
+/* Ajustes para Misión y Visión */
+.mission-vision {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.mission,
+.vision {
+    flex: 1;
+    min-width: 300px; /* Asegura que las columnas no se hagan demasiado pequeñas */
+    background-color: #f4f7f9;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #272727;
+    transition: background-color 0.3s ease;
+}
+
+/* Ajustes para el Sistema Dual */
+.seccion-dual > .section {
+    flex: 1;
+    min-width: 100%;
+}
+
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.column {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos para la imagen */
+.formacion {
+    width: 100%;
+    max-width: 800px;
+    height: auto; /* Mantiene la relación de aspecto */
+    display: block;
+    margin: 30px auto 0;
+    border-radius: 15px;
+}
+
+/* --- MEDIA QUERIES PARA DISPOSITIVOS MÓVILES --- */
+@media (max-width: 800px) {
+    /* Contenido principal */
+    .container {
+        margin: 20px auto;
+    }
+
+    .seccion, .section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .mission-vision, .columns {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+}

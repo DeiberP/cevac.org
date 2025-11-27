@@ -1,0 +1,193 @@
+       :root {
+            --primary-color: #0f40c5;
+            --secondary-color: #e8e8e8;
+            --background-color: #f4f7f6;
+            --text-color: #333;
+            --card-bg-color: #fff;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 2rem;
+            display: flex;
+            margin-top: 100px;
+            align-items: center;
+        }
+
+        .header .logo {
+            margin-right: auto;
+        }
+
+        .header .header-text {
+            flex-grow: 1;
+            text-align: center;
+
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+        }
+
+        .catalog-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .offer-card {
+            background-color: var(--card-bg-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        .offer-card h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .offer-card h3 {
+            color: #444;
+            margin-top: 1.5rem;
+        }
+
+        .description {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .study-plan table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .study-plan th, .study-plan td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        .study-plan th {
+            background-color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .profile-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+
+        .profile-list li {
+            background-color: var(--secondary-color);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile-list li strong {
+            color: var(--primary-color);
+        }
+
+        .total-hours {
+            font-weight: 600;
+            text-align: right;
+            padding: 10px 0;
+        }
+
+    @media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+        margin-top: 50px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .catalog-container {
+        gap: 1rem;
+        margin: 1rem auto;
+    }
+
+    .offer-card {
+        padding: 1.5rem;
+    }
+
+    .study-plan th, .study-plan td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 1rem;
+        margin-top: 30px;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .header p {
+        font-size: 0.9rem;
+    }
+
+    .offer-card h2 {
+        font-size: 1.2rem;
+    }
+    
+    .offer-card h3 {
+        font-size: 1rem;
+    }
+
+    .study-plan table {
+        font-size: 0.8rem;
+    }
+
+    .study-plan th, .study-plan td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .study-plan th {
+        text-align: center;
+    }
+
+    .profile-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

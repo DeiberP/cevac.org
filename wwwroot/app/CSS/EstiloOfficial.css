@@ -1,0 +1,425 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background: url(../img/body.jpg);
+    background-size: cover;
+}
+
+main {
+    margin-left: 4.4rem;
+}
+
+.sidebar {
+    width: 70px;
+    background-color: #2c2f33;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+}
+
+.sidebar-logo {
+    margin-top: 0.5rem;
+    margin-bottom: 20px;
+    object-fit: contain;
+    position: relative;
+}
+
+#logocevac {
+    width: 3rem;
+    border-radius: 50%;
+}
+
+#logocevac:hover {
+    box-shadow: 0px 0px 4px white;
+    border: 1px white solid;
+}
+
+.icons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.bar-icon {
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.bar-icon img {
+    width: 2.2rem;
+    height: 2.2rem;
+    object-fit: contain;
+}
+
+.bar-icon .tooltip {
+    visibility: hidden;
+    width: max-content;
+    background-color: rgb(44, 47, 51);
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.bar-icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.bar-icon:hover {
+    background-color: rgb(58, 73, 116);
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding: 10px;
+}
+
+.sidebar-bottom img {
+    width: 59px;
+    height: 4rem;
+    border-radius: 50%;
+}
+
+.sidebar-bottom img:hover {
+    box-shadow: 0px 0px 4px white;
+    border: 1px white solid;
+}
+
+.derecha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45%;
+    width: 100%;
+    background-color: #2c2f33;
+    color: rgb(222, 222, 222);
+    padding: 1rem 0rem;
+}
+
+.header h1 {
+    font-family: serif;
+    font-weight: 900;
+}
+
+.header h6 {
+    font-family: "Playwrite AU QLD", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.top_container {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    position: relative;
+    right: 3.5%;
+}
+
+.pos-profesores {
+    background-color: rgba(6, 27, 84, 0.753);
+    border-radius: 10px;
+    padding: 2rem 4rem 1rem 4rem;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgb(44, 47, 51);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.664);
+}
+
+.titulo {
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 2vw;
+    text-align: center;
+}
+
+.contador {
+    color: #fff;
+    font-weight: bold;
+    font-size: 5vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+
+.postulados {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.logopostulado {
+    width: 100%;
+    height: 200%;
+    object-fit: contain;
+}
+
+.chart-container {
+    width: 40%;
+    flex-grow: 1;
+    background: rgba(6, 27, 84, 0.753);
+    padding: 0px 20px;
+    border: 3px solid rgb(44, 47, 51);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.664);
+}
+
+.chart-container h6,
+.chart-container p {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: large;
+}
+
+.bar {
+    color: white;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 30% 65% 5%;
+    grid-template-rows: auto;
+}
+
+.bar-label {
+    color: white;
+    font-weight: bold;
+}
+
+.bar-fill {
+    background-color: rgb(245, 68, 68);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.bar-fill2 {
+    background-color: rgb(33, 33, 241);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+/* Estilos generales a las barras */
+.bar-fill,
+.bar-fill2 {
+    min-width: 0%;
+    max-width: 90%;
+    height: 110%;
+    padding: 5px 15px 5px 5px;
+    border: 2px solid rgba(255, 255, 255, 0.863);
+    font-weight: 900;
+}
+
+.percentage-text {
+    position: absolute;
+    z-index: 2;
+    padding-left: 3px;
+}
+
+/* Alineacion de la estadistica y paddding y tamaño de texto */
+.bar-label,
+.bar-fill,
+.bar-fill2,
+.bar-count {
+    display: flex;
+    align-items: center;
+    padding: 3px 0px;
+    font-size: large;
+}
+
+.bar-count {
+    font-weight: 900;
+    justify-content: center;
+}
+
+/* Estilos para la tabla */
+.tables {
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+}
+
+.tables h1 {
+    font-family: serif;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-tittle {
+    background: url(../img/body.jpg);
+    background-size: cover;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: rgba(6, 27, 84, 0.753);
+    color: white;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: #f1f8ff;
+}
+
+.actions button {
+    margin-right: 6px;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-editar {
+    background-color: #f0ad4e;
+}
+
+.btn-editar:hover {
+    background-color: #ec971f;
+}
+
+.btn-actualizar {
+    background-color: #5bc0de;
+}
+
+.btn-actualizar:hover {
+    background-color: #31b0d5;
+}
+
+.btn-eliminar {
+    background-color: #d9534f;
+}
+
+.btn-eliminar:hover {
+    background-color: #c9302c;
+}
+
+.aprendices,
+.table_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 1000px) {
+    .header {
+        flex-direction: column;
+        gap: 1rem !important;
+    }
+    .top_container {
+        position: static;
+        flex-direction: column !important;
+        align-items: center;
+        gap: 1rem;
+    }
+    .postulados {
+        align-items: center;
+    }
+    .pos-profesores {
+        padding: 1rem;
+        width: 45%;
+    }
+    .chart-container {
+        width: 93.5%;
+        gap: 1rem;
+        padding-top: 1rem;
+    }
+    .bar {
+        grid-template-columns: 20% 75% 5%;
+    }
+    .table-container {
+        width: 95%;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #2c2f33;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+}
+
+/* Botón rojo personalizado para Bootstrap */
+.btn.btn-rojo-personalizado {
+  background-color: #ff0000 !important;
+  border: 1px solid #ff0000 !important;
+  color: white !important;
+  padding: 0.375rem 0.75rem !important;
+  border-radius: 0.25rem !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.btn.btn-rojo-personalizado:hover,
+.btn.btn-rojo-personalizado:focus {
+  background-color: #cc0000 !important;
+  border-color: #cc0000 !important;
+  color: white !important;
+  text-decoration: none !important;
+}
