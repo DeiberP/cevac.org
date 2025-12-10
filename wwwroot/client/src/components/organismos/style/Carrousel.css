@@ -1,0 +1,245 @@
+
+.carousel {
+    width: 100%;
+    height: 80vh;
+    margin-top: 0%;
+    overflow: hidden;
+    position: relative;
+    background-color: #000;
+}
+.carousel .list .item {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 60%;
+    transform: translateY(-70%);
+    left: 70%;
+    border-radius: 20px;
+    background-position: 50% 50%;
+    background-size: cover;
+    z-index: 100;
+    transition: 1s;
+}
+
+.carousel .list .item.pos-1,
+.carousel .list .item.pos-2 {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+}
+
+.carousel .list .item.pos-3 {
+    left: 90%;
+    opacity: 0;
+}
+
+.carousel .list .item.pos-4 {
+    left: calc(90% + 200px);
+    opacity: 0;
+}
+
+.carousel .list .item.pos-5 {
+    left: calc(90% + 400px);
+    opacity: 0;
+}
+
+.carousel .list .item.pos-6 {
+    left: calc(90% + 600px);
+}
+
+.carousel .list .item.pos-7,
+.carousel .list .item.pos-8,
+.carousel .list .item.pos-9 {
+    left: calc(90% + 800px);
+}
+
+.list .item .content {
+    position: absolute;
+    top: 50%;
+    left: 150px;
+    transform: translateY(-50%);
+    width: 400px;
+    text-align: left;
+    color: black;
+    font-weight: 700;
+    display: none;
+}
+
+.list .item.active .content {
+    display: block;
+}
+
+/* Keep content styling */
+.content {
+    border-radius: 20px;
+    background-color: #4d4d4dd5;
+    padding: 30px;
+    padding-right: 50px;
+    padding-left: 60px;
+}
+
+.content .title {
+    font-size: 28px;
+    text-transform: uppercase;
+    color: red;
+    font-weight: bold;
+    line-height: 1;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+    font-family: Gill Sans, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.content .name {
+    font-size: 90px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1;
+    color: rgb(25, 0, 255);
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+.content .des {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin-left: 5px;
+    color: #fff;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.9s 1 forwards;
+    font-family: Gill Sans, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.content .btn {
+    margin-left: 5px;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1.2s 1 forwards;
+    font-family: Gill Sans, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.btn button a {
+    text-decoration: none;
+    list-style: none;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+.btn button a:nth-child(1) {
+    color: black;
+}
+
+.btn button a:hover {
+    color: red;
+}
+
+.content .btn button {
+    padding: 10px 0px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border: 2px solid #fff;
+}
+
+.content .btn button:nth-child(1) {
+    margin-right: 15px;
+    transition: 0.3s;
+    font-weight: 700;
+}
+
+.content .btn button:nth-child(1):hover {
+    color: red;
+}
+
+.content .btn button:nth-child(2) {
+    background: transparent;
+    color: red;
+    border: 2px solid #fff;
+    transition: 0.3s;
+    font-weight: 700;
+}
+
+.content .btn button:nth-child(2):hover {
+    background-color: blue;
+    color: #fff;
+    border-color: blue;
+}
+
+@keyframes animate {
+    from {
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+/* Carousel arrows */
+.arrows {
+    position: absolute;
+    top: 90%;
+    right: 35%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.arrows button {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.arrows button:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* Responsive */
+@media screen and (max-width: 800px) {
+    .list .item .content {
+        left: 10px;
+    }
+
+    .content .title,
+    .content .name {
+        font-size: 30px;
+    }
+
+    .content .des {
+        font-size: 16px;
+    }
+
+    .list .item {
+        width: 100%;
+    }
+}
+
+/* Small helper: ensure the active item has highest z-index */
+.carousel .list .item.active {
+    z-index: 200;
+}
+
+/* Optional: fade transition for active item */
+.carousel .list .item {
+    transition: opacity 0.6s ease, transform 0.6s ease, left 0.6s ease;
+}
