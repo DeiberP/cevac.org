@@ -14,7 +14,7 @@
 
 }
 
-.loading-screen.fade-out {
+.fade-out {
     opacity: 0;
     pointer-events: none; 
 }
@@ -34,7 +34,3 @@
     100% { transform: rotate(360deg); }
 }
 
-
-#main-content.hidden {
-    display: none;
-}
